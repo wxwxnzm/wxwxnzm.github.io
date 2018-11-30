@@ -22,12 +22,17 @@
                 // only relatively recently standardized and is not supported in
                 // some browsers (IE9, for one)
                 var el = document.createElement("div");
-                el.innerHTML = html;
+				el.innerHTML = html;
+				console.log(el, 'el')
                 var frag = document.createDocumentFragment(), node, lastNode;
                 while ( (node = el.firstChild) ) {
-                    lastNode = frag.appendChild(node);
+					console.log(node ,'node')
+					lastNode = frag.appendChild(node);
+					console.log(lastNode, 'lastNode');
                 }
-                var firstNode = frag.firstChild;
+				var firstNode = frag.firstChild;
+				console.log(firstNode, 'firstNode');
+				
                 range.insertNode(frag);
 
                 // Preserve the selection
@@ -118,7 +123,8 @@
 		var _html = '<div class="Eleditor-wrap" style="z-index:'+_getLayerMaxZIndex()+'" id="'+_uid+'">\
                                 <div class="Eleditor-loading"><p></p></div>\
                                 <div class="Eleditor-textEditor">\
-                                    <div class="Eleditor-textStyle">\
+									<div class="fix-in-top">\
+									<div class="Eleditor-textStyle">\
                                         <div class="Eleditor-textStyle-item"><div class="Eleditor-textStyle-bold"></div></div>\
                                         <div class="Eleditor-textStyle-item"><div class="Eleditor-textStyle-color"><span></span></div></div>\
                                         <div class="Eleditor-textStyle-item"><div class="Eleditor-textStyle-linedecoration"></div></div>\
@@ -148,6 +154,7 @@
                                             <div class="Eleditor-textStyle-upVoice"></div>\
                                         </div>\
                                     </div>\
+									</div>\
                                     <div class="Eleditor-textEditor-colors">\
                                         <div class="Eleditor-textEditor-modulePane"><span></span></div>\
                                         <ul>\
