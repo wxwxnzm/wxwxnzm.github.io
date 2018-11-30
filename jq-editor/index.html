@@ -1,93 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
 
     <!-- 引入jQuery -->
     <script src="/static/js/jquery.min.js"></script>
-	<script src="/static/js/Eleditor.js?_=1"></script>
-	<script src="/static/js/vconsole.min.js"></script>
+    <script src="/static/js/vconsole.min.js"></script>
+    
+
+    <link rel="stylesheet" href="/static/css/base.css" />
+
+    <style>
+      html {
+        font-size: 50px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        -webkit-touch-callout: none;
+        background-color: #fff;
+        line-height: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contentEditor"></div>
+    <!-- <button class="submit">aaa</button> -->
 	<script>
 		var vConsole = new VConsole();
+		function loadCustomJs(scriptName, _callback) {
+			version = new Date().getTime();
+
+			if (!scriptName) return;
+			var body = document.getElementsByTagName("body")[0];
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = scriptName + "?_v=" + version;
+			script.onload = function() {
+				_callback && _callback();
+			};
+			body.appendChild(script)
+		}
+		loadCustomJs('/static/js/Eleditor.js', function() {
+			loadCustomJs('/static/js/jq-editor.js')
+		})
 	</script>
-
-	<link rel="stylesheet" href="/static/css/base.css">
-
-	<style>
-		html {
-			font-size: 50px;
-		}
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		body {
-		    -webkit-touch-callout: none;
-		    background-color: #fff;
-		    line-height: inherit;
-		    padding-top: 30px;
-		}
-		#contentEditor{
-			width: 100%;
-			min-height: 300px;
-			box-sizing: border-box;
-			padding: 10px;
-    		color: #444;
-		}
-		
-	</style>
-</head>
-<body>
-
-
-		<div id="contentEditor">
-			</div>
-
-<script>
-var contentEditor = new Eleditor({
-	el: '#contentEditor',
-	/*初始化完成钩子*/
-	placeHolder: '点击输入内容11111'
-});
-$('.Eleditor-textStyle-item-upImg').on('click', function(e) {
-	if (window.FastClick) {
-		$('.Eleditor-input-file-image').triggerFastClick();
-	} else {
-		$('.Eleditor-input-file-image').click();
-	}
-});
-$('.Eleditor-textStyle-item-upVideo').on('click', function(e) {
-	if (window.FastClick) {
-		$('.Eleditor-input-file-video').triggerFastClick();
-	} else {
-		$('.Eleditor-input-file-video').click();
-	}
-});
-$('.Eleditor-input-file-image').on('change', function(e) {
-	$('.textarea').focus();
-	var selection = getSelection();
-	if (lastEditRange) {
-		selection.removeAllRanges()
-		selection.addRange(lastEditRange)
-	}
-	pasteHtmlAtCaret('<img src="https://pingtai-uat.oss-cn-shenzhen.aliyuncs.com/29d26e78-f7c7-45a6-9042-1e55f5869eac.jpg"/>')
-	// pasteHtmlAtCaret('<video src="https://pingtai-uat.oss-cn-shenzhen.aliyuncs.com/29d26e78-f7c7-45a6-9042-1e55f5869eac.jpg"><video/>')
-	lastEditRange = selection.getRangeAt(0)
-});
-$('.Eleditor-input-file-video').on('change', function(e) {
-	$('.textarea').focus();
-	var selection = getSelection();
-	if (lastEditRange) {
-		selection.removeAllRanges()
-		selection.addRange(lastEditRange)
-	}
-	pasteHtmlAtCaret('<video controls="controls" poster="https://oss-uat.xuebangsoft.net/814c37d3-fb33-4cc3-b395-a9f2f88ecd42.mp4?spx&amp;x-oss-process=video/snapshot,t_100,f_jpg" src="https://oss-uat.xuebangsoft.net/814c37d3-fb33-4cc3-b395-a9f2f88ecd42.mp4"></video>')
-	lastEditRange = selection.getRangeAt(0)
-});
-
-</script>
-
-</body>
+  </body>
 </html>

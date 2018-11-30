@@ -226,9 +226,8 @@
     width: 100%;
     height: 100%;
     background: #fff;
-    position: fixed;
-    left: 0;
-    top: 0
+    overflow: hidden;
+    position: relative;
 }
 
 .Eleditor-textEditor-colors, .Eleditor-textEditor-fontsizes, .Eleditor-textEditor-lineheight, .Eleditor-textEditor-linedecorations {
@@ -418,7 +417,12 @@
 }
 
 .Eleditor-textStyle .Eleditor-textStyle-item .Eleditor-textStyle-upImg:before {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAARVBMVEUAAACKioqJiYmLi4uKioqLi4uIiIiKioqKioqJiYmJiYmJiYmKioqKioqPj4+KioqKioqLi4uKioqJiYmKioqJiYmKiopHpOm/AAAAFnRSTlMAwIB/XkAf79Dyn1DgMBBvkHA/r8SPuxOfgwAAANRJREFUOMvl0MtygzAMheEjI98wGELa8/6PWsxAsik2M22yyb/VN2NL+NRsV8muU92hoZxGoxLlAXEaDSDvhbbTS1BJzlegcO1foY3kdAXCpfHv5xkHSr4A1ZMMbajcMi04c8/WYc8jn2tQ+ExQct/39Avce35z9CT7BqTdXJEayKH7OoM+ee7NN50Ghgc8KTqUAl0dlrnTFQxSh3cAthilq8Ib3DKFZQFoG1AlRJEmNMfTjmMV+gP2sbF1j61ERTVll4E8+R6N0sAgjAbtrDEp40X9AEsWInSQgk2QAAAAAElFTkSuQmCC);
+    /* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAARVBMVEUAAACKioqJiYmLi4uKioqLi4uIiIiKioqKioqJiYmJiYmJiYmKioqKioqPj4+KioqKioqLi4uKioqJiYmKioqJiYmKiopHpOm/AAAAFnRSTlMAwIB/XkAf79Dyn1DgMBBvkHA/r8SPuxOfgwAAANRJREFUOMvl0MtygzAMheEjI98wGELa8/6PWsxAsik2M22yyb/VN2NL+NRsV8muU92hoZxGoxLlAXEaDSDvhbbTS1BJzlegcO1foY3kdAXCpfHv5xkHSr4A1ZMMbajcMi04c8/WYc8jn2tQ+ExQct/39Avce35z9CT7BqTdXJEayKH7OoM+ee7NN50Ghgc8KTqUAl0dlrnTFQxSh3cAthilq8Ib3DKFZQFoG1AlRJEmNMfTjmMV+gP2sbF1j61ERTVll4E8+R6N0sAgjAbtrDEp40X9AEsWInSQgk2QAAAAAElFTkSuQmCC); */
+    background-image: url(./img.svg);
+    background-size: .44rem
+}
+.Eleditor-textStyle .Eleditor-textStyle-item .Eleditor-textStyle-upVideo:before {
+    background-image: url(./video.svg);
     background-size: .44rem
 }
 
@@ -482,10 +486,8 @@
 }
 
 .Eleditor-inputarea {
-    position: absolute;
-    top: 1.8rem;
-    bottom: .8rem;
-    width: 100%
+    width: 100%;
+    height: 500px;
 }
 
 .Eleditor-textEditor[type=link] .Eleditor-inputarea {
@@ -570,9 +572,6 @@
     border-right: .02rem solid #ddd
 }
 
-.Eleditor-placeholder {
-    color: #999
-}
 
 .Eleditor-deleteMode * {
     border: .02rem dashed red;
