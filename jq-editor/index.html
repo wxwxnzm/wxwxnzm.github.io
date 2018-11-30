@@ -7,7 +7,11 @@
 
     <!-- 引入jQuery -->
     <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/Eleditor.js"></script>
+	<script src="/static/js/Eleditor.js"></script>
+	<script src="/static/js/vconsole.min.js"></script>
+	<script>
+		var vConsole = new VConsole();
+	</script>
 
 	<link rel="stylesheet" href="/static/css/base.css">
 
@@ -62,6 +66,7 @@ $('.Eleditor-textStyle-item-upVideo').on('click', function(e) {
 	}
 });
 $('.Eleditor-input-file-image').on('change', function(e) {
+	$('.textarea').focus();
 	var selection = getSelection();
 	if (lastEditRange) {
 		selection.removeAllRanges()
@@ -72,6 +77,7 @@ $('.Eleditor-input-file-image').on('change', function(e) {
 	lastEditRange = selection.getRangeAt(0)
 });
 $('.Eleditor-input-file-video').on('change', function(e) {
+	$('.textarea').focus();
 	var selection = getSelection();
 	if (lastEditRange) {
 		selection.removeAllRanges()

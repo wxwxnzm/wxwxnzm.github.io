@@ -739,10 +739,33 @@
 			}
 			_$editorColorModule.hide();
 		});
-		_$editorTextArea.on('blur', function() {
+		_$editorTextArea.on('keyup', function() {
 			var selection = getSelection()
-            window.lastEditRange = selection.getRangeAt(0);
+			window.lastEditRange = selection.getRangeAt(0);
+			console.log(window.lastEditRange)
 		})
+		_$editorTextArea.on('click', function() {
+			var selection = getSelection()
+			window.lastEditRange = selection.getRangeAt(0);
+			console.log(window.lastEditRange)
+		})
+		//  // 编辑框点击事件
+		//  document.querySelector('.textarea').onclick = function() {
+        //     // 获取选定对象
+        //     var selection = getSelection()
+        //     // 设置最后光标对象
+        //     lastEditRange = selection.getRangeAt(0)
+        //     console.log(lastEditRange)
+        // }
+
+        // // 编辑框按键弹起事件
+        // document.querySelector('.textarea').onkeyup = function() {
+        //     // 获取选定对象
+        //     var selection = getSelection()
+        //     // 设置最后光标对象
+        //     lastEditRange = selection.getRangeAt(0)
+        //     console.log(lastEditRange)
+        // }
 
 		/*controller*/
         _$wrap.on('click', '*', function(_e) {
