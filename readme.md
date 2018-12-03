@@ -6,6 +6,13 @@
 	2.功能简化成只有contentEditable
 
 
+[jq-simple-editor](https://wxwxnzm.github.io/jq-simple-editor)  编辑器基于 [https://www.kancloud.cn/hihwp/eleditor](https://www.kancloud.cn/hihwp/eleditor) 改造
+
+
+	更新日志V1.0.0（2018-11-30）<br>
+	1.功能简化成只有上传图片和视频
+
+
 
 
 ---

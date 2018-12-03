@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq-simple-editor</title>
+    <link rel="stylesheet" href="/static/css/base1.css">
+    
+</head>
+<body>
+    <div class="editor-header">
+        <div class="flex">
+            <div class="item img"><img src="/static/css/img.svg" alt=""></div>
+            <div class="item video"><img src="/static/css/video.svg" alt=""></div>
+        </div>
+        <div class="submit"><img src="/static/css/submit.svg" alt=""></div>
+    </div>
+    <div class="editor-content" contenteditable="true" placeholder="点击输入内容"></div>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/vconsole.min.js"></script>
+    <script>
+        var vConsole = new VConsole();
+    </script>
+    <script src="/static/js/Eleditor1.js"></script>
+</body>
+</html>
